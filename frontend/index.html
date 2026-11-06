@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteka</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <header>
         <h1>Biblioteka</h1>
 
-        <p>
-            Przykładowa aplikacja rozwijana podczas laboratoriów.
-        </p>
+        <p>Przykładowa aplikacja rozwijana podczas laboratoriów.</p>
 
         <nav>
             <a href="#about">O bibliotece</a>
             <a href="#books">Książki</a>
             <a href="#rules">Jak wypożyczyć?</a>
-        </nav><a href="add_book.html">
-                Dodaj książkę
-                </a>
+            <a href="add_book.html">Dodaj książkę</a>
+        </nav>
+    </header>
 
     <main>
 
@@ -72,17 +71,17 @@
                         <td>Hobbit</td>
                         <td>J.R.R. Tolkien</td>
                         <td>1937</td>
-
-                     <tr>
+                    </tr>
+                    <tr>
                         <td>Mały Książę</td>
-                         <td>Antoine de Saint-Exupéry</td>
-                         <td>1943</td>
-                            </tr>
+                        <td>Antoine de Saint-Exupéry</td>
+                        <td>1943</td>
                     </tr>
                 </tbody>
             </table>
 
-            <article>
+            <div class="book-list">
+            <article class="book-card">
                 <h3>Solaris</h3>
 
                 <div class="book-info">
@@ -101,7 +100,7 @@
                 </p>
             </article>
 
-            <article>
+            <article class="book-card">
                 <h3>Lalka</h3>
 
                 <p>
@@ -114,7 +113,7 @@
                 </p>
             </article>
 
-            <article>
+            <article class="book-card">
                 <h3>Hobbit</h3>
 
                 <p>
@@ -126,29 +125,32 @@
                     spokojny dom i wyrusza w niebezpieczną podróż.
                 </p>
             </article>
-            <article>
-    <h3>Mały Książę</h3>
 
-    <div class="book-info">
-        <p>
-            <strong>Autor:</strong> Antoine de Saint-Exupéry
-        </p>
+            <article class="book-card">
+                <h3>Mały Książę</h3>
 
-        <p>
-            <strong>Rok wydania:</strong> 1943
-        </p>
-    </div>
+                <div class="book-info">
+                    <p>
+                        <strong>Autor:</strong> Antoine de Saint-Exupéry
+                    </p>
 
-    <p>
-        Opowieść o podróży Małego Księcia i jego spotkaniach
-        z mieszkańcami różnych planet.
-    </p>
-</article>
+                    <p>
+                        <strong>Rok wydania:</strong> 1943
+                    </p>
+                </div>
+
+                <p>
+                    Opowieść o podróży Małego Księcia i jego spotkaniach
+                    z mieszkańcami różnych planet.
+                </p>
+            </article>
+            </div>
         </section>
+
         <section id="search">
             <h2>Wyszukaj książkę</h2>
 
-            <form method="get">
+            <form  class="search-form" method="get">
 
                 <div>
                     <label for="query">
@@ -196,6 +198,7 @@
 
             </form>
         </section>
+
         <section id="rules">
             <h2>Jak wypożyczyć książkę?</h2>
 
@@ -218,180 +221,6 @@
                 <li>logowanie użytkowników,</li>
                 <li>wypożyczenia.</li>
             </ul>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>
-            Projekt ćwiczeniowy — Projektowanie aplikacji webowych
-        </p>
-    </footer>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dodaj książkę — Biblioteka</title>
-</head>
-
-<body>
-
-    <header>
-        <h1>Biblioteka</h1>
-
-        <nav>
-            <a href="index.html">Strona główna</a>
-            <a href="add_book.html">Dodaj książkę</a>
-        </nav>
-    </header>
-
-    <main>
-
-        <section>
-            <h2>Dodaj książkę</h2>
-
-            <form method="post">
-
-                <div>
-                    <label for="title">
-                        Tytuł:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        required
-                    >
-                </div>
-
-                <div>
-                    <label for="author">
-                        Autor:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="author"
-                        name="author"
-                        required
-                    >
-                </div>
-
-                <div>
-                    <label for="year">
-                        Rok wydania:
-                    </label>
-
-                    <input
-                        type="number"
-                        id="year"
-                        name="year"
-                        min="0"
-                        max="2100"
-                    >
-                </div>
-
-                <div>
-                    <label for="category">
-                        Kategoria:
-                    </label>
-
-                    <select
-                        id="category"
-                        name="category"
-                    >
-                        <option value="">
-                            Wybierz kategorię
-                        </option>
-
-                        <option value="fantasy">
-                            Fantasy
-                        </option>
-
-                        <option value="science-fiction">
-                            Science fiction
-                        </option>
-
-                        <option value="crime">
-                            Kryminał
-                        </option>
-
-                        <option value="other">
-                            Inna
-                        </option>
-                    </select>
-                </div>
-
-                <div>
-                    <p>Format:</p>
-
-                    <input
-                        type="radio"
-                        id="paper"
-                        name="format"
-                        value="paper"
-                        checked
-                    >
-
-                    <label for="paper">
-                        Papierowa
-                    </label>
-
-                    <input
-                        type="radio"
-                        id="ebook"
-                        name="format"
-                        value="ebook"
-                    >
-
-                    <label for="ebook">
-                        E-book
-                    </label>
-                </div>
-
-                <div>
-                    <input
-                        type="checkbox"
-                        id="available"
-                        name="available"
-                        checked
-                    >
-
-                    <label for="available">
-                        Książka dostępna
-                    </label>
-                </div>
-
-                <div>
-                    <label for="description">
-                        Opis:
-                    </label>
-
-                    <textarea
-                        id="description"
-                        name="description"
-                        rows="6"
-                        cols="50"
-                    ></textarea>
-                </div>
-
-                <div>
-                    <button type="submit">
-                        Dodaj książkę
-                    </button>
-
-                    <button type="reset">
-                        Wyczyść formularz
-                    </button>
-                </div>
-
-            </form>
         </section>
 
     </main>
